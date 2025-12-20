@@ -1,43 +1,1912 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agricultural Tools Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #d0f0c0;
+            background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+            background-attachment: scroll;
+            background-size: cover;
+            background-position: center;
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            color: #2e7d32;
+        }
+        .banner-image {
+            display: block;
+            width: 900px;
+            height: 400px;
+            margin: 20px auto 20px;
+            border-radius: 12px;
+            box-shadow: 1px 4px 15px rgba(165, 214, 167, 0.5);
+            object-fit: cover;
+            padding: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        header {
+            text-align: center;
+            background: rgba(232, 245, 233, 0.9);
+            padding: 20px 0 10px 0;
+        }
+        nav {
+            background: rgba(165, 214, 167, 0.9);
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #2e7d32;
+            font-size: 22px;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: 600;
+            transition: color 0.2s;
+            font-family: 'Montserrat', sans-serif;
+        }
+        nav a:hover {
+            color: #388e3c;
+            text-decoration: underline;
+        }
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 20px 10px 20px;
+        }
+        .paragraph-section {
+            background: rgba(241, 249, 241, 0.9);
+            font-size: 20px;
+            border-radius: 10px;
+            box-shadow: 1px 2px 10px #cde4cd;
+            padding: 22px 28px;
+            margin-bottom: 38px;
+            text-align: justify;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .section-title {
+            color: #388e3c;
+            font-size: 32px;
+            margin-top: 24px;
+            margin-bottom: 8px;
+            border-bottom: 2px solid #a5d6a7;
+            display: inline-block;
+            padding-bottom: 5px;
+            font-family: 'Playfair Display', serif;
+        }
+        table {
+            width: 98%;
+            border-collapse: collapse;
+            margin: 30px auto;
+            box-shadow: 0 0 8px rgba(0,0,0,0.15);
+        }
+        th, td {
+            border: 1px solid #387c35;
+            padding: 12px 18px;
+            text-align: left;
+            font-size: 18px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        th {
+            background-color: rgba(224, 242, 233, 0.9);
+            font-weight: 700;
+        }
+        td {
+            background-color: rgba(247, 255, 247, 0.9);
+        }
+        ol, ul {
+            font-size: 20px;
+            padding-left: 32px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        ul ul, ol ol {
+            margin-left: 18px;
+        }
+        aside {
+            background: rgba(230, 243, 230, 0.9);
+            border-radius: 8px;
+            box-shadow: 1px 1px 8px #aac8aa;
+            width: 95%;
+            margin: 32px auto 43px auto;
+            font-size: 20px;
+            padding: 18px 25px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .center-wrapper {
+            margin-left: -100%;
+            margin-right: -100%;
+            padding-left: -1000px;
+            padding-right: 80px; 
+        }
+        body {
+            background-color: #d0f0c0;
+            background-image: url('bg.jpeg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin-left: 0px;      
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-right: 100;
+        }
+        .text-content, .services-list {
+            margin-left: 0px;    
+            padding-left: -200px;   
+            text-align: left;    
+        }
+        .media-section {
+            width: 97%;
+            margin: 40px auto;
+            text-align: center;
+            background: rgba(241, 249, 241, 0.9);
+            border-radius: 8px;
+            box-shadow: 1px 2px 10px #a5d6a7;
+            padding: 18px;
+        }
+        video {
+            width: 85%;
+            max-width: 600px;
+            border-radius: 8px;
+            margin: 20px auto;
+            box-shadow: 1px 1px 8px #a5d6a7;
+        }
+        .contact-info {
+            background: rgba(230, 243, 230, 0.9);
+            border-radius: 8px;
+            box-shadow: 1px 1px 8px #aac8aa;
+            width: 95%;
+            margin: 0 auto 43px auto;
+            font-size: 20px;
+            padding: 18px 25px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .map-container iframe {
+        border-radius: 14px;
+        box-shadow: 12px 48px 0px #a0c8a0; 
+        }
+        .outer-padding {
+        background: rgba(241, 249, 241, 0.9);      
+        padding: 35px;
+        border-radius: 18px;
+        box-shadow: 1px 2px 10px #cde4cd;
+        margin-bottom: 30px;
+        }
+        .services-flex, .benefits-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 32px;
+            margin-bottom: 30px;
+        }
+        .services-flex .text-content, .benefits-flex .text-content {
+            flex: 1 1 60%;
+        }
+        .images-column {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: flex-start;
+            min-width: 180px;
+            margin-top: 0;
+        }
+        .images-column img {
+            width: 370px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px #b2df98;
+            background: #f7fff7;
+            margin-left: 1px;    
+            margin-top: 1px;     
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 18px;
+        }
+        .logo-text {
+            font-size: 42px;
+            font-weight: 700;
+            color: #2e7d32;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        footer {
+            background: rgba(165, 214, 167, 0.9);
+            color: #3a6b3a;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 38px;
+            padding: 20px 0;
+            border-top: 1px solid #81c784;
+            font-family: 'Montserrat', sans-serif;
+        }
+        a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .dark-green-hr {
+            border: none;
+            height: 3px;
+            background-color: #1b5e20;
+            margin: 20px 0;
+        }
+        
+        .calculator-section {
+            background: rgba(241, 249, 241, 0.9);
+            border-radius: 10px;
+            box-shadow: 1px 2px 10px #cde4cd;
+            padding: 22px 28px;
+            margin-bottom: 38px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .calculator-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: rgba(232, 245, 233, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        
+        .calculator-display {
+            background-color: rgba(241, 249, 241, 0.9);
+            border: 2px solid #a5d6a7;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: right;
+            font-size: 28px;
+            font-weight: bold;
+            color: #2e7d32;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            overflow: hidden;
+        }
+        
+        .calculator-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        
+        .calculator-btn {
+            background-color: #a5d6a7;
+            border: none;
+            border-radius: 8px;
+            padding: 18px 0;
+            font-size: 20px;
+            font-weight: bold;
+            color: #2e7d32;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .calculator-btn:hover {
+            background-color: #81c784;
+            transform: translateY(-2px);
+        }
+        
+        .calculator-btn:active {
+            transform: translateY(1px);
+        }
+        
+        .calculator-btn.operator {
+            background-color: #4caf50;
+            color: white;
+        }
+        
+        .calculator-btn.operator:hover {
+            background-color: #388e3c;
+        }
+        
+        .calculator-btn.equals {
+            background-color: #2e7d32;
+            color: white;
+            grid-column: span 2;
+        }
+        
+        .calculator-btn.equals:hover {
+            background-color: #1b5e20;
+        }
+        
+        .calculator-btn.clear {
+            background-color: #ff7043;
+            color: white;
+        }
+        
+        .calculator-btn.clear:hover {
+            background-color: #e64a19;
+        }
+        
+        .calculator-btn.delete {
+            background-color: #ff9800;
+            color: white;
+        }
+        
+        .calculator-btn.delete:hover {
+            background-color: #ef6c00;
+        }
+        
+        .cart-section {
+            background: rgba(241, 249, 241, 0.9);
+            border-radius: 10px;
+            box-shadow: 1px 2px 10px #cde4cd;
+            padding: 22px 28px;
+            margin-bottom: 38px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .cart-table th, .cart-table td {
+            border: 1px solid #387c35;
+            padding: 12px 18px;
+            text-align: left;
+            font-size: 18px;
+        }
+        
+        .cart-table th {
+            background-color: rgba(224, 242, 233, 0.9);
+            font-weight: 700;
+        }
+        
+        .cart-table td {
+            background-color: rgba(247, 255, 247, 0.9);
+        }
+        
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quantity-btn {
+            background-color: #388e3c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .quantity-btn:hover {
+            background-color: #2e7d32;
+        }
+        
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+            border: 1px solid #a5d6a7;
+            border-radius: 4px;
+            padding: 5px;
+        }
+        
+        .remove-btn {
+            background-color: #e53935;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .remove-btn:hover {
+            background-color: #c62828;
+        }
+        
+        .cart-summary {
+            background-color: rgba(230, 243, 230, 0.9);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        
+        .cart-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .cart-action-btn {
+            background-color: #388e3c;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .cart-action-btn:hover {
+            background-color: #2e7d32;
+        }
+        
+        .add-to-cart-btn {
+            background-color: #388e3c;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 16px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .add-to-cart-btn:hover {
+            background-color: #2e7d32;
+        }
+        
+        .popup-section {
+            background: rgba(241, 249, 241, 0.9);
+            border-radius: 10px;
+            box-shadow: 1px 2px 10px #cde4cd;
+            padding: 22px 28px;
+            margin-bottom: 38px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .popup-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .popup-btn {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .popup-btn:hover {
+            background-color: #388e3c;
+        }
+        
+        .error-message {
+            color: #e53935;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .success-message {
+            color: #388e3c;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .loading-spinner {
+            display: none;
+            text-align: center;
+            margin: 10px 0;
+        }
+        
+        .plugin-section {
+            background: rgba(208, 242, 208, 0.9);
+            border-radius: 10px;
+            box-shadow: 1px 2px 10px #c7e5c7;
+            padding: 22px 28px;
+            margin-bottom: 38px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .weather-widget {
+            background: rgba(232, 245, 233, 0.9);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            text-align: center;
+        }
+        
+        .file-upload-section {
+            background: rgba(230, 243, 230, 0.9);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        @media (max-width: 900px) {
+            .services-flex, .benefits-flex {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .images-column {
+                justify-content: flex-start;
+                margin: 10px 0;
+            }
+            .images-column img {
+                width: 48vw;
+                max-width: 160px;
+                height: 80px;
+            }
+            .logo-text {
+                font-size: 32px;
+            }
+        }
+        @media (max-width: 700px){
+            video, .banner-image, table, .media-section, .paragraph-section, aside, main {
+                width: 98%;
+                max-width: 98vw;
+                font-size: 18px;
+                padding: 10px;
+            }
+            nav a { font-size: 18px; margin: 0 8px; }
+            .images-column {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .images-column img {
+                width: 98vw;
+                max-width: 330px;
+                height: 120px;
+            }
+            .logo-container {
+                flex-direction: column;
+                gap: 8px;
+            
+            }
+            .logo-text {
+                font-size: 28px;
+            
+            }
+            th, td {
+                font-size: 16px;
+                padding: 10px 15px;
+            }
+            
+            .calculator-container {
+                max-width: 100%;
+                padding: 15px;
+            }
+            
+            .calculator-btn {
+                padding: 15px 0;
+                font-size: 18px;
+            }
+        }
+        .database-section {
+            background: rgba(241, 249, 241, 0.9);
+            border-radius: 10px;
+            box-shadow: 1px 2px 10px #cde4cd;
+            padding: 22px 28px;
+            margin-bottom: 38px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .database-form {
+            background: rgba(232, 245, 233, 0.9);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #a5d6a7;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .database-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+        
+        .database-table th, .database-table td {
+            border: 1px solid #387c35;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .database-table th {
+            background-color: #a5d6a7;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+        
+        .database-table tr:nth-child(even) {
+            background-color: #f1f8e9;
+        }
+    </style>
+</head>
+<body>
+    <img class="banner-image" src="Agricultural_machinery.jpg" alt="Agricultural tools and machinery">
+    <header>
+        <b><h1 style="font-family: 'Playfair Display', serif; font-size: 42px;">Welcome to GreenField Agricultural Tools</h1></b>
+    </header>
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#products">Products</a>
+        <a href="#cart">Shopping Cart</a>
+        <a href="#services">Services</a>
+        <a href="#benefits">Benefits</a>
+        <a href="#calculator">Calculator</a>
+        <a href="#plugins">Plugins</a>
+        <a href="#popup">Popup Demo</a>
+        <a href="#media">Media</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <main>
+        <div class="logo-container" style="background-color: #cde4cd; margin: auto ;">
+            <div class="logo-text" style="color: #004a07; font-size: 50px; padding-top: 50px; padding-bottom: 50px; ;">GREENFIELD</div>
+            <canvas id="logoCanvas" width="120" height="120" style="background:#ecffe7; border-radius:50%;"></canvas>
+            <div class="logo-text"style="color: #004a07; font-size: 50px;">AGROSTORES</div>
+        </div>
+        <script>
+        const c = document.getElementById("logoCanvas");
+        const ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(60,28,18,0,2*Math.PI); ctx.fillStyle="#ffe726"; ctx.fill();
+        for(let i=0; i<12; i++) {
+            let angle = i*Math.PI/6;
+            ctx.beginPath();
+            ctx.moveTo(60+Math.cos(angle)*22,28+Math.sin(angle)*22);
+            ctx.lineTo(60+Math.cos(angle)*32,28+Math.sin(angle)*32);
+            ctx.strokeStyle="#ffe726";
+            ctx.lineWidth=2.5;
+            ctx.stroke();
+        }
+        ctx.beginPath();
+        ctx.moveTo(10,80); ctx.quadraticCurveTo(30,65,50,80);
+        ctx.lineWidth = 8; ctx.strokeStyle="#73c872"; ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(15,85); ctx.quadraticCurveTo(30,75,48,82);
+        ctx.lineWidth = 3; ctx.strokeStyle="#397b2e"; ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(25,70,10,0,2*Math.PI); ctx.fillStyle="#444"; ctx.fill();
+        ctx.beginPath();
+        ctx.arc(25,70,4,0,2*Math.PI); ctx.fillStyle="#b7e79c"; ctx.fill();
+        ctx.font = "bold 16px 'Playfair Display'";
+        ctx.fillStyle = "#388e3c";
+        ctx.fillText("GF", 40, 45);
+        </script>
+        <br><br>
+        <section id="about" class="paragraph-section">
+            <hr class="dark-green-hr">
+            <hr class="dark-green-hr">
+            <br>
+            GreenField Agricultural Tools is dedicated to empowering farmers and gardeners with modern, efficient equipment and knowledge. Our premium range of tools helps you prepare soil, cultivate crops, and manage farms sustainably. Partnering with established brands, we focus on reliability and lasting value.
+            <br><br>
+            Agriculture forms the backbone of many economies worldwide, and the use of efficient agricultural tools makes farming both productive and sustainable. Investing in quality instruments can improve soil preparation, planting accuracy, irrigation, and harvesting efficiency. From simple hand tools to heavy machinery, every piece plays a crucial role in enhancing crop yield while reducing labor exhaustion. Our store aims to provide farmers and gardeners with reliable and affordable tools suited to diverse agricultural needs.
+            <br><br>
+            <hr class="dark-green-hr">
+            <hr class="dark-green-hr">
+        </section>
+        <section id="products">
+            <h2 class="section-title" style="background-color: rgba(241, 249, 241, 0.9); color: #00930f; padding: 20px; font: size 60px; border-radius: 15px;">Available Products</h2>
+            <table>
+                <tr>
+                    <th>Tool</th>
+                    <th>Description</th>
+                    <th>Price (₹)</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Hand Tiller</td>
+                    <td>Manual tool for loosening and aerating soil in small gardens. Great for weed control and prepping seedbeds.</td>
+                    <td>850</td>
+                    <td><button class="add-to-cart-btn" data-name="Hand Tiller" data-price="850">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>Seed Planter</td>
+                    <td>Ensures uniform seed distribution, improving crop stand and yield.</td>
+                    <td>1200</td>
+                    <td><button class="add-to-cart-btn" data-name="Seed Planter" data-price="1200">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>Tractor Plough</td>
+                    <td>Heavy-duty plough for tractors, ideal for turning and leveling soil across large farms.</td>
+                    <td>45000</td>
+                    <td><button class="add-to-cart-btn" data-name="Tractor Plough" data-price="45000">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>Wheelbarrow</td>
+                    <td>Durable cart for transporting soil, manure, and harvest efficiently.</td>
+                    <td>1800</td>
+                    <td><button class="add-to-cart-btn" data-name="Wheelbarrow" data-price="1800">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>Water Sprinkler</td>
+                    <td>Rotating sprinkler gives even irrigation, saving water and boosting plant health.</td>
+                    <td>600</td>
+                    <td><button class="add-to-cart-btn" data-name="Water Sprinkler" data-price="600">Add to Cart</button></td>
+                </tr>
+                <tr>
+                    <td>Fertilizer Spreader</td>
+                    <td>Spreads fertilizer evenly for balanced crop nutrition.</td>
+                    <td>2500</td>
+                    <td><button class="add-to-cart-btn" data-name="Fertilizer Spreader" data-price="2500">Add to Cart</button></td>
+                </tr>
+            </table>
+        </section>
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+        <section id="cart" class="cart-section">
+            <h2 class="section-title">Shopping Cart</h2>
+            <div id="cart-items">
+                <p>Your cart is empty.</p>
+            </div>
+            <div id="cart-summary" class="cart-summary" style="display: none;">
+                <p><strong>Subtotal: ₹<span id="cart-subtotal">0</span></p>
+                <p>Items in cart: <span id="cart-count">0</span></p>
+            </div>
+            <div id="cart-actions" class="cart-actions" style="display: none;">
+                <button id="clear-cart-btn" class="cart-action-btn">Clear Cart</button>
+                <button id="checkout-btn" class="cart-action-btn">Proceed to Checkout</button>
+            </div>
+        </section>
+        <section id="calculator" class="calculator-section">
+            <h2 class="section-title">Calculator</h2>
+            <p>Use our calculator for your agricultural calculations:</p>
+            
+            <div class="calculator-container">
+                <div class="calculator-display" id="display">0</div>
+                <div class="calculator-buttons">
+                    <button class="calculator-btn clear" onclick="calculator.clear()">C</button>
+                    <button class="calculator-btn delete" onclick="calculator.deleteLast()">⌫</button>
+                    <button class="calculator-btn operator" onclick="calculator.appendOperator('/')">/</button>
+                    <button class="calculator-btn operator" onclick="calculator.appendOperator('*')">×</button>
+                    <button class="calculator-btn" onclick="calculator.appendNumber('7')">7</button>
+                    <button class="calculator-btn" onclick="calculator.appendNumber('8')">8</button>
+                    <button class="calculator-btn" onclick="calculator.appendNumber('9')">9</button>
+                    <button class="calculator-btn operator" onclick="calculator.appendOperator('-')">-</button>
+                    <button class="calculator-btn" onclick="calculator.appendNumber('4')">4</button>
+                    <button class="calculator-btn" onclick="calculator.appendNumber('5')">5</button>
+                    <button class="calculator-btn" onclick="calculator.appendNumber('6')">6</button>
+                    <button class="calculator-btn operator" onclick="calculator.appendOperator('+')">+</button>
+                    <button class="calculator-btn" onclick="calculator.appendNumber('1')">1</button>
+                    <button class="calculator-btn" onclick="calculator.appendNumber('2')">2</button>
+                    <button class="calculator-btn" onclick="calculator.appendNumber('3')">3</button>
+                    <button class="calculator-btn equals" onclick="calculator.calculate()">=</button>
+                    <button class="calculator-btn" onclick="calculator.appendNumber('0')">0</button>
+                    <button class="calculator-btn" onclick="calculator.appendNumber('.')">.</button>
+                </div>
+            </div>
+        </section>
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+        <section id="plugins" class="plugin-section">
+            <h2 class="section-title">Interactive Plugins</h2>
+            
+            <div class="weather-widget">
+                <h3 style="font-size: 25px">Farm Weather Forecast</h3>
+                <div id="weather-data">
+                    <p>Loading weather information...</p>
+                </div>
+                <button class="popup-btn" onclick="loadWeatherData()">Refresh Weather</button>
+            </div>
+            <section id="plugins" class="plugin-section">
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="farm_management.php" 
+                style="display: inline-block; 
+                        background: linear-gradient(135deg, #0e6000, #60d265); 
+                        color: white; 
+                        padding: 20px 40px; 
+                        text-decoration: none; 
+                        border-radius: 12px; 
+                        font-size: 22px; 
+                        font-weight: bold;
+                        box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+                        transition: all 0.3s ease;">
+                    🚜 LAUNCH FARM MANAGEMENT SYSTEM
+                </a>
+            </div>
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+            <div class="weather-widget">
+                <h3 style="font-size: 30px; color:red ;">Track every detail of your Farm with 'EASE'</h3>
+            </div>
+            </section>
+            <div class="file-upload-section">
+                <h3 style="font-size: 25px ;">Upload Farm Documents</h3>
+                <form id="fileUploadForm" enctype="multipart/form-data">
+                    <input type="file" id="farmFile" name="farmFile" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx" style="margin: 10px 0; padding: 8px;">
+                    <br>
+                    <select id="fileType" name="fileType" style="padding: 8px; margin: 5px 0;">
+                        <option value="invoice">Invoice</option>
+                        <option value="receipt">Receipt</option>
+                        <option value="contract">Contract</option>
+                        <option value="other">Other Document</option>
+                    </select>
+                    <br><br>
+                    <button type="button" class="popup-btn" onclick="handleFileUpload()">Upload File</button>
+                </form>
+                <div id="upload-result" style="margin-top: 10px;"></div>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <h3 style="font-size: 25px">Farm Equipment Status</h3>
+                <div id="equipment-status">
+                    <p>Checking equipment status...</p>
+                </div>
+                <button class="popup-btn" onclick="checkEquipmentStatus()">Check Status</button>
+            </div>
+        </section>
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+        <section id="popup" class="popup-section">
+            <h2 class="section-title">Popup Demonstrations</h2>
+            <p>Try our interactive popup boxes:</p>
+            <div class="popup-buttons">
+                <button class="popup-btn" onclick="showAlertBox()">Show Alert Box</button>
+                <button class="popup-btn" onclick="showConfirmBox()">Show Confirm Box</button>
+                <button class="popup-btn" onclick="showPromptBox()">Show Prompt Box</button>
+                <button class="popup-btn" onclick="showProductInfo()">Show Product Info</button>
+                <button class="popup-btn" onclick="showStoreInfo()">Show Store Info</button>
+                <button class="popup-btn" onclick="loadProductsViaAJAX()">Load Products via AJAX</button>
+            </div>
+            <div id="popup-result" style="margin-top: 20px; padding: 15px; background: rgba(230, 243, 230, 0.9); border-radius: 8px; display: none;">
+                <h3>Popup Result:</h3>
+                <p id="popup-result-text"></p>
+            </div>
+            <div id="ajax-products" style="margin-top: 20px;"></div>
+        </section>
 
-jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        <section id="services" class="outer-padding">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-flex">
+              <div class="text-content">
+                <ol>
+                    <li>Consultation for farm size and crop needs</li>
+                    <li>Training on equipment use
+                        <ol>
+                            <li>Basics and safety protocols</li>
+                            <li>Maintenance practices</li>
+                        </ol>
+                    </li>
+                    <li>After-sales service and tool support</li>
+                    <li>Customized tool packages
+                        <ol>
+                            <li>Small-scale farmers</li>
+                            <li>Large commercial operations</li>
+                        </ol>
+                    </li>
+                    <li>Soil health assessment and improvement recommendations</li>
+                    <li>Seasonal workshops on latest agriculture techniques</li>
+                    <li>24/7 customer support hotline for troubleshooting</li>
+                    <li>Field demonstration and trial programs for new products</li>
+                    <li>Equipment rental services for seasonal needs
+                        <ol>
+                            <li>Short-term rental options</li>
+                            <li>Long-term leasing agreements</li>
+                        </ol>
+                    </li>
+                    <li>Precision farming solutions and technology integration</li>
+                    <li>Crop monitoring and yield optimization services</li>
+                    <li>Supply chain support and market linkage assistance</li>
+                    <li>Financial guidance and subsidy application support</li>
+                </ol>
+
+              </div>
+              <div class="images-column">
+                <img src="pic1.jpeg" alt="Service Image 1"/>
+                <img src="pic2.jpeg" alt="Service Image 2"/>
+              </div>
+            </div>
+        </section>
+        <section id="benefits" class="outer-padding">
+            <h2 class="section-title">Benefits of Our Tools</h2>
+            <div class="benefits-flex">
+              <div class="text-content">
+                <ul style="list-style-type: square;">
+                    <li>Boost crop yields efficiently</li>
+                    <li>Save time and labor
+                        <ul style="list-style-type: square;">
+                            <li>Quick soil preparation</li>
+                            <li>Accurate seed placement</li>
+                        </ul>
+                    </li>
+                    <li>Improve farm sustainability</li>
+                    <li>Conserve water using advanced irrigation</li>
+                    <li>Reduce equipment breakdowns with high durability tools</li>
+                    <li>Minimize waste by optimizing resource usage</li>
+                    <li>Enhance safety features to protect users</li>
+                    <li>Easy integration with advanced technologies like farm management software</li>
+                    <li>Environmentally friendly models with reduced emissions</li>
+                    <li>Cost-effective operation and maintenance
+                        <ul style="list-style-type: square;">
+                            <li>Lower fuel consumption</li>
+                            <li>Reduced repair costs</li>
+                        </ul>
+                    </li>
+                    <li>Increased operational efficiency and productivity</li>
+                    <li>Better crop quality and uniform growth patterns</li>
+                    <li>Extended equipment lifespan with proper maintenance</li>
+                    <li>Adaptable to various farm sizes and crop types</li>
+                    <li>Weather-resistant construction for all-season use</li>
+                    <li>User-friendly designs suitable for all skill levels</li>
+                </ul>
+              </div>
+              <div class="images-column">
+                <img src="pic3.jpeg" alt="Benefit Image 1"/>
+                <img src="pic4.jpeg" alt="Benefit Image 2"/>
+              </div>
+            </div>
+        </section>
+
+        <aside>
+            <strong>Quick Links:</strong>
+            <ul>
+                <li><a href="#products">Products Table</a></li>
+                <li><a href="#services">Our Services</a></li>
+                <li><a href="https://www.greenfieldtools.in" target="_blank" rel="noopener">Visit Website</a></li>
+                <li><a href="#contact">Contact Section</a></li>
+            </ul>
+            <strong>Useful Resources:</strong>
+            <ul>
+                <li><a href="https://www.agriculture.com/machinery" target="_blank" rel="noopener">Agriculture.com Machinery</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Agricultural_machinery" target="_blank" rel="noopener">Wikipedia: Agricultural Machinery</a></li>
+            </ul>
+        </aside>
+        <section id="media" class="media-section">
+            <h1 style="font-family: 'Playfair Display', serif; font-size: 36px;">Product Review Videos</h1>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 28px;">Hand Tiller Review</h3>
+                <iframe width="820" height="275"
+                    src="https://www.youtube.com/embed/Tf4QliKt5aM"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 28px;">Seed Planter Demo</h3>
+                <iframe width="820" height="275"
+                    src="https://www.youtube.com/embed/Wb7N5zba5kQ?"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 28px;">Tractor Plough Operation</h3>
+                <iframe width="820" height="283"
+                    src="https://www.youtube.com/embed/zAmWfsSE1T0"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+        </section>
+
+        <section id="inquiry" style="max-width: 700px; margin: 40px auto; background: rgba(241, 249, 241, 0.9); padding: 25px; border-radius: 10px; box-shadow: 1px 2px 10px #cde4cd;">
+        <h2 style="color:#388e3c; margin-bottom: 20px; font-family: 'Playfair Display', serif; font-size: 32px;">Inquiry / Contact Form</h2>
+        <form id="contactForm" action="process_form.php" method="POST" enctype="multipart/form-data">
+            <label for="name" style="display:block; margin-bottom: 6px; font-weight: bold; font-size: 18px;">Name *</label>
+            <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin-bottom:16px; border: 1px solid #a5d6a7; border-radius: 5px; font-size: 16px;"/>
+
+            <label for="email" style="display:block; margin-bottom: 6px; font-weight: bold; font-size: 18px;">Email *</label>
+            <input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin-bottom:16px; border:1px solid #a5d6a7; border-radius: 5px; font-size: 16px;"/>
+
+            <label for="phone" style="display:block; margin-bottom: 6px; font-weight: bold; font-size: 18px;">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 ..." required style="width: 100%; padding: 10px; margin-bottom:5px; border:1px solid #a5d6a7; border-radius: 5px; font-size: 16px;"/>
+            <div id="phone-error" class="error-message"></div>
+            <div id="phone-success" class="success-message"></div>
+
+            <label for="product" style="display:block; margin-bottom: 6px; font-weight: bold; font-size: 18px;">Interested Product</label>
+            <select id="product" name="product" style="width: 100%; padding: 10px; margin-bottom:16px; border:1px solid #a5d6a7; border-radius: 5px; font-size: 16px;">
+            <option value="" disabled selected>Select a product</option>
+            <option value="hand_tiller">Hand Tiller</option>
+            <option value="seed_planter">Seed Planter</option>
+            <option value="tractor_plough">Tractor Plough</option>
+            <option value="water_sprinkler">Water Sprinkler</option>
+            <option value="wheelbarrow">Wheelbarrow</option>
+            <option value="fertilizer_spreader">Fertilizer Spreader</option>
+            </select>
+
+            <label for="farm_size" style="display:block; margin-bottom: 6px; font-weight: bold; font-size: 18px;">Farm Size (acres)</label>
+            <input type="number" id="farm_size" name="farm_size" min="1" max="1000" style="width: 100%; padding: 10px; margin-bottom:16px; border:1px solid #a5d6a7; border-radius: 5px; font-size: 16px;"/>
+
+            <label for="crop_type" style="display:block; margin-bottom: 6px; font-weight: bold; font-size: 18px;">Crop Type</label>
+            <select id="crop_type" name="crop_type" style="width: 100%; padding: 10px; margin-bottom:16px; border:1px solid #a5d6a7; border-radius: 5px; font-size: 16px;">
+                <option value="wheat">Wheat</option>
+                <option value="rice">Rice</option>
+                <option value="corn">Corn</option>
+                <option value="vegetables">Vegetables</option>
+                <option value="fruits">Fruits</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="message" style="display:block; margin-bottom: 6px; font-weight: bold; font-size: 18px;">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Your message here..." style="width: 100%; padding: 10px; margin-bottom:20px; border:1px solid #a5d6a7; border-radius: 5px; font-size: 16px;"></textarea>
+
+            <button type="submit" style="background-color: #388e3c; color: white; padding: 14px 32px; border: none; border-radius: 6px; cursor: pointer; font-size: 18px; font-weight: bold;">Send Inquiry</button>
+        </form>
+        </section>
+        
+        <section id="database" class="database-section">
+            <h2 class="section-title">Product Details Form</h2>
+            
+            <div class="database-form">
+                <h3>Add New Product</h3>
+                <form id="addProductForm">
+                    <div class="form-group">
+                        <label for="productName">Product Name</label>
+                        <input type="text" id="productName" name="productName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productDescription">Description</label>
+                        <textarea id="productDescription" name="productDescription" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="productPrice">Price (₹)</label>
+                        <input type="number" id="productPrice" name="productPrice" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productCategory">Category</label>
+                        <select id="productCategory" name="productCategory" required>
+                            <option value="Hand Tools">Hand Tools</option>
+                            <option value="Planting Tools">Planting Tools</option>
+                            <option value="Heavy Machinery">Heavy Machinery</option>
+                            <option value="Transportation">Transportation</option>
+                            <option value="Irrigation">Irrigation</option>
+                            <option value="Fertilization">Fertilization</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="popup-btn">Add Product to Database</button>
+                </form>
+                <div id="product-form-result" style="margin-top: 10px;"></div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <h3>Customer Inquiries</h3>
+                <button class="popup-btn" onclick="loadCustomerInquiries()">Load Customer Inquiries</button>
+                <div id="inquiries-list" style="margin-top: 15px;"></div>
+            </div>
+
+        </section>
+
+        <section id="contact">
+        <h2 style="text-align: center; margin-bottom: 20px; font-family: 'Playfair Display', serif; font-size: 60px; background-color: rgba(241, 249, 241, 0.9); color: #00930f; padding: 20px; font: size 30px; border-radius: 15px;">Contact Us</h2>
+
+        <div style="background: rgba(200, 228, 200, 0.9); border-radius: 10px; padding: 30px 40px; display: flex; gap: 40px; max-width: 1100px; margin: 0 auto; align-items: center;">
+
+            <div class="contact-info" style="flex: 1; min-width: 280px; font-size: 20px;">
+            <ol>
+                <li>
+                Main Contacts
+                <ul>
+                    <li><strong>Email:</strong> <a href="mailto:sales@greenfieldtools.in">sales@greenfieldtools.in</a></li>
+                    <li><strong>Phone:</strong> <a href="tel:+919876543210">+91 98765 43210</a></li>
+                    <li><strong>WhatsApp:</strong> <a href="https://wa.me/919876543210" target="_blank">Message us</a></li>
+                    <li><strong>Address:</strong> 123 Farm Lane, Greenfield, India</li>
+                </ul>
+                </li>
+                <li>
+                Support and Services
+                <ul>
+                    <li>Office Hours: Monday to Saturday, 9:00 AM – 6:00 PM</li>
+                    <li>Customer Service: 24/7 for urgent equipment support</li>
+                    <li>Map: <a href="https://goo.gl/maps/XzYcQ9j1234" target="_blank">Google Maps Link</a></li>
+                </ul>
+                </li>
+                <li>
+                Reasons to Contact Us
+                <ul>
+                    <li>Product inquiries and quotations</li>
+                    <li>Technical support and troubleshooting</li>
+                    <li>Bulk or wholesale orders</li>
+                    <li>Partnerships or collaborations</li>
+                    <li>Feedback and suggestions</li>
+                </ul>
+                </li>
+                <li>
+                Follow us on Social Media
+                <ul>
+                    <li><a href="https://www.facebook.com/greenfieldtools" target="_blank">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/greenfieldtools" target="_blank">Instagram</a></li>
+                    <li><a href="https://twitter.com/greenfieldtools" target="_blank">Twitter</a></li>
+                </ul>
+                </li>
+            </ol>
+            <p>Visit our <a href="https://www.greenfieldtools.in" target="_blank" rel="noopener noreferrer">website</a> for more details and online ordering.</p>
+            </div>
+            <div style="flex: 1; min-width: 320px; display: flex; flex-direction: column; align-items: center;">
+            <h2 style="text-align: center; margin-bottom: 20px; font-family: 'Playfair Display', serif; font-size: 45px; background-color: rgba(241, 249, 241, 0.9); color: #bb0707; padding: 20px; font: size 30px; border-radius: 15px;">Our Location :-</h2>
+            <br>
+            <iframe width="450" height="450" frameborder="0" style="border-radius: 12px;"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14978.646947415663!2d76.8287776!3d23.0899515!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39632445f6a8127d%3A0xdf3c6aea9cdcc652!2sIndore%2C%20Madhya%20Pradesh%20452001%2C%20India!5e0!3m2!1sen!2sin!4v1698832700000"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <br>
+            <p style="color:#388e3c; margin-top: 8px; font-weight: bold; font-size: 30px;">"Find us here above"</p>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        &copy; 2025 GreenField Agricultural Tools. All rights reserved.<br>
+        Powered by sustainable agricultural innovation.
+    </footer>
+
+    <script>
+        const calculator = {
+            currentInput: '0',
+            previousInput: '',
+            operation: null,
+            resetScreen: false,
+            
+            appendNumber(number) {
+                if (this.currentInput === '0' || this.resetScreen) {
+                    this.currentInput = number;
+                    this.resetScreen = false;
+                } else {
+                    if (number === '.' && this.currentInput.includes('.')) {
+                        return;
+                    }
+                    this.currentInput += number;
+                }
+                this.updateDisplay();
+            },
+            
+            appendOperator(op) {
+                if (this.operation !== null) this.calculate();
+                this.previousInput = this.currentInput;
+                this.operation = op;
+                this.resetScreen = true;
+            },
+            
+            calculate() {
+                if (this.operation === null || this.resetScreen) return;
+                
+                let result;
+                const prev = parseFloat(this.previousInput);
+                const current = parseFloat(this.currentInput);
+                
+                if (isNaN(prev) || isNaN(current)) return;
+                
+                switch (this.operation) {
+                    case '+':
+                        result = prev + current;
+                        break;
+                    case '-':
+                        result = prev - current;
+                        break;
+                    case '*':
+                        result = prev * current;
+                        break;
+                    case '/':
+                        if (current === 0) {
+                            this.displayError("Cannot divide by zero!");
+                            return;
+                        }
+                        result = prev / current;
+                        break;
+                    default:
+                        return;
+                }
+                
+                result = Math.round(result * 100000000) / 100000000;
+                
+                this.currentInput = result.toString();
+                this.operation = null;
+                this.previousInput = '';
+                this.resetScreen = true;
+                this.updateDisplay();
+            },
+            
+            clear() {
+                this.currentInput = '0';
+                this.previousInput = '';
+                this.operation = null;
+                this.resetScreen = false;
+                this.updateDisplay();
+            },
+            
+            deleteLast() {
+                if (this.currentInput.length === 1) {
+                    this.currentInput = '0';
+                } else {
+                    this.currentInput = this.currentInput.slice(0, -1);
+                }
+                this.updateDisplay();
+            },
+            
+            displayError(message) {
+                document.getElementById('display').textContent = message;
+                setTimeout(() => {
+                    this.updateDisplay();
+                }, 2000);
+            },
+            
+            updateDisplay() {
+                let displayValue = this.currentInput;
+                
+                if (displayValue.includes('.')) {
+                    const parts = displayValue.split('.');
+                    parts[0] = this.formatNumberWithCommas(parts[0]);
+                    displayValue = parts.join('.');
+                } else {
+                    displayValue = this.formatNumberWithCommas(displayValue);
+                }
+                
+                document.getElementById('display').textContent = displayValue;
+            },
+            
+            formatNumberWithCommas(number) {
+                return number.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+        };
+        
+        document.addEventListener('keydown', (event) => {
+            if (event.key >= '0' && event.key <= '9') {
+                calculator.appendNumber(event.key);
+            } else if (event.key === '.') {
+                calculator.appendNumber('.');
+            } else if (event.key === '+') {
+                calculator.appendOperator('+');
+            } else if (event.key === '-') {
+                calculator.appendOperator('-');
+            } else if (event.key === '*') {
+                calculator.appendOperator('*');
+            } else if (event.key === '/') {
+                event.preventDefault();
+                calculator.appendOperator('/');
+            } else if (event.key === 'Enter' || event.key === '=') {
+                calculator.calculate();
+            } else if (event.key === 'Escape') {
+                calculator.clear();
+            } else if (event.key === 'Backspace') {
+                calculator.deleteLast();
+            }
+        });
+
+        let cart = [];
+        
+        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const name = this.getAttribute('data-name');
+                const price = parseInt(this.getAttribute('data-price'));
+                addToCart(name, price);
+            });
+        });
+        
+        function addToCart(name, price) {
+            const existingItem = cart.find(item => item.name === name);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    quantity: 1
+                });
+            }
+            
+            updateCartDisplay();
+        }
+        
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cart-items');
+            const cartSummary = document.getElementById('cart-summary');
+            const cartActions = document.getElementById('cart-actions');
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p>Your cart is empty.</p>';
+                cartSummary.style.display = 'none';
+                cartActions.style.display = 'none';
+                return;
+            }
+            
+            let html = `
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            
+            let subtotal = 0;
+            
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                
+                html += `
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>₹${item.price}</td>
+                        <td>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn" onclick="updateQuantity(${index}, -1)">-</button>
+                                <input type="number" class="quantity-input" value="${item.quantity}" min="1" onchange="updateQuantityInput(${index}, this.value)">
+                                <button class="quantity-btn" onclick="updateQuantity(${index}, 1)">+</button>
+                            </div>
+                        </td>
+                        <td>₹${itemTotal}</td>
+                        <td><button class="remove-btn" onclick="removeFromCart(${index})">Remove</button></td>
+                    </tr>
+                `;
+            });
+            
+            html += `</tbody></table>`;
+            
+            cartItems.innerHTML = html;
+            
+            document.getElementById('cart-subtotal').textContent = subtotal;
+            document.getElementById('cart-count').textContent = cart.reduce((total, item) => total + item.quantity, 0);
+            
+            cartSummary.style.display = 'block';
+            cartActions.style.display = 'flex';
+        }
+        
+        function updateQuantity(index, change) {
+            cart[index].quantity += change;
+            
+            if (cart[index].quantity < 1) {
+                cart[index].quantity = 1;
+            }
+            
+            updateCartDisplay();
+        }
+        
+        function updateQuantityInput(index, value) {
+            const newQuantity = parseInt(value);
+            
+            if (isNaN(newQuantity) || newQuantity < 1) {
+                cart[index].quantity = 1;
+            } else {
+                cart[index].quantity = newQuantity;
+            }
+            
+            updateCartDisplay();
+        }
+        
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartDisplay();
+        }
+        
+        document.getElementById('clear-cart-btn').addEventListener('click', function() {
+            cart = [];
+            updateCartDisplay();
+        });
+        
+        document.getElementById('checkout-btn').addEventListener('click', function() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            alert(`Thank you for your order! Total: ₹${total}`);
+            cart = [];
+            updateCartDisplay();
+        });
+
+        const storeData = {
+            name: "GreenField Agricultural Tools",
+            founded: 2010,
+            location: "Greenfield, India",
+            products: [
+                {name: "Hand Tiller", price: 850, category: "Hand Tools"},
+                {name: "Seed Planter", price: 1200, category: "Planting Tools"},
+                {name: "Tractor Plough", price: 45000, category: "Heavy Machinery"},
+                {name: "Wheelbarrow", price: 1800, category: "Transportation"},
+                {name: "Water Sprinkler", price: 600, category: "Irrigation"},
+                {name: "Fertilizer Spreader", price: 2500, category: "Fertilization"}
+            ],
+            services: [
+                "Equipment Consultation",
+                "Training Programs", 
+                "Maintenance Services",
+                "Custom Tool Packages",
+                "Soil Health Assessment"
+            ],
+            getProductCount: function() {
+                return this.products.length;
+            },
+            getServiceCount: function() {
+                return this.services.length;
+            },
+            getTotalInventoryValue: function() {
+                return this.products.reduce((total, product) => total + product.price, 0);
+            }
+        };
+
+        function showAlertBox() {
+            alert("Welcome to GreenField Agricultural Tools!\n\nWe are committed to providing the best farming equipment for all your agricultural needs.");
+            showPopupResult("Alert box displayed successfully!");
+        }
+
+        function showConfirmBox() {
+            const result = confirm("Would you like to subscribe to our newsletter for farming tips and exclusive offers?");
+            if (result) {
+                showPopupResult("Thank you for subscribing to our newsletter!");
+            } else {
+                showPopupResult("You chose not to subscribe to our newsletter.");
+            }
+        }
+
+        function showPromptBox() {
+            const userName = prompt("Please enter your name to personalize your experience:", "Farmer");
+            if (userName) {
+                showPopupResult(`Welcome, ${userName}! Thank you for visiting GreenField Agricultural Tools.`);
+            } else {
+                showPopupResult("No name was entered. Welcome to our store!");
+            }
+        }
+
+        function showProductInfo() {
+            const productList = storeData.products.map(product => 
+                `${product.name} - ₹${product.price} (${product.category})`
+            ).join('\n');
+            
+            alert(`Available Products:\n\n${productList}\n\nTotal Products: ${storeData.getProductCount()}\nTotal Inventory Value: ₹${storeData.getTotalInventoryValue()}`);
+            showPopupResult("Product information displayed in alert box!");
+        }
+
+        function showStoreInfo() {
+            const servicesList = storeData.services.join('\n• ');
+            const result = confirm(`Store Information:\n\nName: ${storeData.name}\nFounded: ${storeData.founded}\nLocation: ${storeData.location}\n\nServices:\n• ${servicesList}\n\nWould you like to contact us for more information?`);
+            
+            if (result) {
+                showPopupResult("Redirecting to contact section...");
+                document.getElementById('contact').scrollIntoView({behavior: 'smooth'});
+            } else {
+                showPopupResult("Store information displayed successfully!");
+            }
+        }
+
+        function showPopupResult(message) {
+            const resultElement = document.getElementById('popup-result');
+            const textElement = document.getElementById('popup-result-text');
+            textElement.textContent = message;
+            resultElement.style.display = 'block';
+            
+            setTimeout(() => {
+                resultElement.style.display = 'none';
+            }, 5000);
+        }
+
+        function validatePhoneNumber(phone) {
+            const phoneRegex = /^(\+91[\-\s]?)?[6789]\d{9}$/;
+            return phoneRegex.test(phone.replace(/\s/g, ''));
+        }
+
+        document.getElementById('phone').addEventListener('input', function() {
+            const phone = this.value;
+            const errorElement = document.getElementById('phone-error');
+            const successElement = document.getElementById('phone-success');
+            
+            if (phone === '') {
+                errorElement.style.display = 'none';
+                successElement.style.display = 'none';
+                return;
+            }
+            
+            if (validatePhoneNumber(phone)) {
+                errorElement.style.display = 'none';
+                successElement.textContent = '✓ Valid phone number';
+                successElement.style.display = 'block';
+            } else {
+                successElement.style.display = 'none';
+                errorElement.textContent = '✗ Please enter a valid Indian phone number';
+                errorElement.style.display = 'block';
+            }
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            const phone = document.getElementById('phone').value;
+            if (!validatePhoneNumber(phone)) {
+                e.preventDefault();
+                alert('Please enter a valid Indian phone number before submitting.');
+                document.getElementById('phone').focus();
+            }
+        });
+
+        function parseJSONData(jsonString) {
+            try {
+                return JSON.parse(jsonString);
+            } catch (error) {
+                console.error('JSON Parse Error:', error);
+                return null;
+            }
+        }
+
+        function loadProductsViaAJAX() {
+            const loadingSpinner = document.createElement('div');
+            loadingSpinner.className = 'loading-spinner';
+            loadingSpinner.innerHTML = 'Loading agricultural products...';
+            document.getElementById('ajax-products').appendChild(loadingSpinner);
+            loadingSpinner.style.display = 'block';
+
+            setTimeout(() => {
+                loadingSpinner.style.display = 'none';
+                
+                const agriculturalProducts = [
+                    {
+                        id: 1, 
+                        title: "Premium Hand Tiller", 
+                        description: "High-quality manual tiller perfect for small gardens and flower beds. Features ergonomic handle and durable steel tines.",
+                        price: 1250,
+                        category: "Hand Tools"
+                    },
+                    {
+                        id: 2, 
+                        title: "Professional Seed Planter", 
+                        description: "Advanced seed planting technology ensuring uniform seed distribution and optimal planting depth for maximum yield.",
+                        price: 1800,
+                        category: "Planting Equipment"
+                    },
+                    {
+                        id: 3, 
+                        title: "Heavy Duty Tractor Plough", 
+                        description: "Industrial grade farming equipment designed for large-scale operations. Compatible with most tractor models.",
+                        price: 52000,
+                        category: "Heavy Machinery"
+                    },
+                    {
+                        id: 4,
+                        title: "Smart Irrigation System",
+                        description: "Automated watering system with soil moisture sensors and programmable timer for efficient water usage.",
+                        price: 3500,
+                        category: "Irrigation"
+                    },
+                    {
+                        id: 5,
+                        title: "Organic Fertilizer Spreader",
+                        description: "Evenly distributes organic fertilizers across your fields with adjustable spread width and rate control.",
+                        price: 2900,
+                        category: "Fertilization"
+                    }
+                ];
+                
+                displayAJAXProducts(agriculturalProducts);
+                showPopupResult('Agricultural products loaded successfully!');
+            }, 1000);
+        }
+
+        function displayAJAXProducts(products) {
+            const container = document.getElementById('ajax-products');
+            container.innerHTML = '<h3 style="color: #2e7d32; margin-bottom: 20px;">Featured Agricultural Products (Loaded via AJAX):</h3>';
+            
+            const productsGrid = document.createElement('div');
+            productsGrid.style.display = 'grid';
+            productsGrid.style.gap = '20px';
+            productsGrid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(300px, 1fr))';
+            
+            products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.style.background = 'rgba(232, 245, 233, 0.9)';
+                productDiv.style.padding = '20px';
+                productDiv.style.margin = '10px 0';
+                productDiv.style.borderRadius = '10px';
+                productDiv.style.border = '2px solid #a5d6a7';
+                productDiv.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+                
+                productDiv.innerHTML = `
+                    <h4 style="color: #1b5e20; margin-bottom: 10px; font-size: 20px;">${product.title}</h4>
+                    <p style="color: #2e7d32; margin-bottom: 8px; font-weight: bold;">Category: ${product.category}</p>
+                    <p style="color: #388e3c; margin-bottom: 8px; font-weight: bold;">Price: ₹${product.price}</p>
+                    <p style="color: #444; line-height: 1.5; margin-bottom: 15px;">${product.description}</p>
+                    <button class="add-to-cart-btn" onclick="addAJAXProductToCart('${product.title}', ${product.price})" 
+                            style="width: 100%; padding: 12px; font-size: 16px;">
+                        Add to Cart - ₹${product.price}
+                    </button>
+                `;
+                productsGrid.appendChild(productDiv);
+            });
+            
+            container.appendChild(productsGrid);
+        }
+
+        function addAJAXProductToCart(productName, price) {
+            addToCart(productName, price);
+            showPopupResult(`✓ ${productName} added to cart for ₹${price}!`);
+        }
+
+        function loadWeatherData() {
+            const weatherElement = document.getElementById('weather-data');
+            weatherElement.innerHTML = '<p>Loading weather data...</p>';
+            
+            setTimeout(() => {
+                const weatherConditions = ['Sunny', 'Partly Cloudy', 'Rainy', 'Cloudy'];
+                const randomCondition = weatherConditions[Math.floor(Math.random() * weatherConditions.length)];
+                const temperature = Math.floor(Math.random() * 15) + 20;
+                const humidity = Math.floor(Math.random() * 40) + 50;
+                
+                weatherElement.innerHTML = `
+                    <p><strong>Condition:</strong> ${randomCondition}</p>
+                    <p><strong>Temperature:</strong> ${temperature}°C</p>
+                    <p><strong>Humidity:</strong> ${humidity}%</p>
+                    <p><strong>Forecast:</strong> Good for farming activities</p>
+                `;
+            }, 1500);
+        }
+
+        function handleFileUpload() {
+            const fileInput = document.getElementById('farmFile');
+            const fileType = document.getElementById('fileType').value;
+            const resultElement = document.getElementById('upload-result');
+            
+            if (fileInput.files.length === 0) {
+                resultElement.innerHTML = '<p style="color: #e53935;">Please select a file to upload.</p>';
+                return;
+            }
+            
+            const file = fileInput.files[0];
+            const fileSize = file.size / 1024 / 1024;
+            
+            if (fileSize > 5) {
+                resultElement.innerHTML = '<p style="color: #e53935;">File size must be less than 5MB.</p>';
+                return;
+            }
+            
+            resultElement.innerHTML = '<p style="color: #388e3c;">Uploading file...</p>';
+            
+            setTimeout(() => {
+                resultElement.innerHTML = `
+                    <p style="color: #388e3c;">✓ File uploaded successfully!</p>
+                    <p><strong>File Name:</strong> ${file.name}</p>
+                    <p><strong>File Type:</strong> ${fileType}</p>
+                    <p><strong>Size:</strong> ${fileSize.toFixed(2)} MB</p>
+                `;
+            }, 2000);
+        }
+
+        function checkEquipmentStatus() {
+            const statusElement = document.getElementById('equipment-status');
+            statusElement.innerHTML = '<p>Checking equipment status...</p>';
+            
+            setTimeout(() => {
+                const equipment = [
+                    { name: "Tractor", status: "Operational", maintenance: "Due in 30 days" },
+                    { name: "Harvester", status: "Maintenance Required", maintenance: "Overdue" },
+                    { name: "Irrigation System", status: "Operational", maintenance: "Due in 15 days" },
+                    { name: "Seed Planter", status: "Operational", maintenance: "Due in 60 days" }
+                ];
+                
+                let html = '<div style="text-align: left;">';
+                equipment.forEach(item => {
+                    const statusColor = item.status === "Operational" ? "#388e3c" : "#e53935";
+                    html += `
+                        <div style="margin: 10px 0; padding: 10px; background: rgba(255,255,255,0.7); border-radius: 5px;">
+                            <p><strong>${item.name}:</strong> <span style="color: ${statusColor}">${item.status}</span></p>
+                            <p><em>Maintenance: ${item.maintenance}</em></p>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+                
+                statusElement.innerHTML = html;
+            }, 1500);
+        }
+
+        loadWeatherData();
+        checkEquipmentStatus();
+
+        const agriculturalProductsJSON = `{
+            "agricultural_products": [
+                {
+                    "id": 1,
+                    "name": "Hand Tiller", 
+                    "price": 850,
+                    "category": "Hand Tools",
+                    "description": "Manual tool for loosening and aerating soil in small gardens. Great for weed control and prepping seedbeds."
+                },
+                {
+                    "id": 2,
+                    "name": "Seed Planter",
+                    "price": 1200, 
+                    "category": "Planting Tools",
+                    "description": "Ensures uniform seed distribution, improving crop stand and yield with precise depth control."
+                },
+                {
+                    "id": 3,
+                    "name": "Tractor Plough",
+                    "price": 45000,
+                    "category": "Heavy Machinery", 
+                    "description": "Heavy-duty plough for tractors, ideal for turning and leveling soil across large farms."
+                }
+            ],
+            "store_info": {
+                "name": "GreenField Agricultural Tools",
+                "location": "Greenfield, India",
+                "specialization": "Modern Farming Equipment"
+            }
+        }`;
+        const parsedAgriculturalProducts = parseJSONData(agriculturalProductsJSON);
+        if (parsedAgriculturalProducts) {
+            console.log('Agricultural Products Data:', parsedAgriculturalProducts);
+        }
+
+        document.getElementById('addProductForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            addProductToDatabase();
+        });
+
+        function addProductToDatabase() {
+            const formData = new FormData(document.getElementById('addProductForm'));
+            const productData = {
+                name: formData.get('productName'),
+                description: formData.get('productDescription'),
+                price: formData.get('productPrice'),
+                category: formData.get('productCategory')
+            };
+
+            fetch('save_product.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(productData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultElement = document.getElementById('product-form-result');
+                if (data.success) {
+                    resultElement.innerHTML = '<p style="color: #388e3c;">✓ Product added successfully to database!</p>';
+                    document.getElementById('addProductForm').reset();
+                } else {
+                    resultElement.innerHTML = '<p style="color: #e53935;">✗ Error adding product: ' + data.message + '</p>';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('product-form-result').innerHTML = '<p style="color: #e53935;">✗ Network error occurred</p>';
+            });
+        }
+
+        function loadCustomerInquiries() {
+            fetch('get_inquiries.php')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('inquiries-list');
+                    if (data.length === 0) {
+                        container.innerHTML = '<p>No inquiries found in database.</p>';
+                        return;
+                    }
+
+                    let html = '<table class="database-table"><tr><th>Name</th><th>Email</th><th>Phone</th><th>Product</th><th>Message</th><th>Date</th></tr>';
+                    data.forEach(inquiry => {
+                        html += `
+                            <tr>
+                                <td>${inquiry.name}</td>
+                                <td>${inquiry.email}</td>
+                                <td>${inquiry.phone}</td>
+                                <td>${inquiry.product}</td>
+                                <td>${inquiry.message.substring(0, 50)}...</td>
+                                <td>${new Date(inquiry.created_at).toLocaleDateString()}</td>
+                            </tr>
+                        `;
+                    });
+                    html += '</table>';
+                    container.innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('inquiries-list').innerHTML = '<p style="color: #e53935;">Error loading inquiries</p>';
+                });
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            saveInquiryToDatabase();
+        });
+
+        function saveInquiryToDatabase() {
+            const formData = new FormData(document.getElementById('contactForm'));
+            const inquiryData = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                product: formData.get('product'),
+                farm_size: formData.get('farm_size'),
+                crop_type: formData.get('crop_type'),
+                message: formData.get('message')
+            };
+
+            if (!validatePhoneNumber(inquiryData.phone)) {
+                alert('Please enter a valid Indian phone number before submitting.');
+                return;
+            }
+
+            fetch('save_inquiry.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(inquiryData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Thank you for your inquiry! We have saved your information and will contact you soon.');
+                    document.getElementById('contactForm').reset();
+                } else {
+                    alert('Error saving your inquiry. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Network error occurred. Please try again.');
+            });
+        }
+
+        document.getElementById('checkout-btn').addEventListener('click', function() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+
+            const customerName = prompt('Please enter your name for the order:');
+            const customerEmail = prompt('Please enter your email:');
+            
+            if (!customerName || !customerEmail) {
+                alert('Name and email are required for order processing.');
+                return;
+            }
+
+            const orderData = {
+                customer_name: customerName,
+                customer_email: customerEmail,
+                products: cart,
+                total_amount: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)
+            };
+
+            fetch('save_order.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(orderData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert(`Thank you for your order! Order #${data.order_id} has been placed. Total: ₹${orderData.total_amount}`);
+                    cart = [];
+                    updateCartDisplay();
+                } else {
+                    alert('Error processing your order. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Network error occurred. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>
